@@ -23,8 +23,7 @@ dbfilename dump.rdb
 dir /etc/redis/
 appendonly no
 
-# prevent redis from ever using 400MB of memory
-maxmemory 419430400
+maxmemory <%= node[:redis][:max_memory] %>
 
 # when max memory is reached, go through all keys and delete the
 # "least recently used" ones. NOTE: this doesn't do quite what it
