@@ -42,3 +42,9 @@ execute "restart-redis" do
   command "/etc/init.d/redis-server restart"
   action :nothing
 end
+
+# open port 6379
+bash "allowing redis traffic through firewall" do
+  user "root"
+  code "ufw allow 6379"
+end
