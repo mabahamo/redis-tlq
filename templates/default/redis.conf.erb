@@ -3,9 +3,6 @@ pidfile /var/run/redis/redis-server.pid
 logfile /var/log/redis/redis-server.log
 
 port 6379
-<% unless node[:redis] && node[:redis][:dont_bind] %>
-  bind 127.0.0.1
-<% end %>
 timeout 300
 
 loglevel notice
